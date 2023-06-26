@@ -6,10 +6,11 @@ const approvedColors = JSON.parse(approvedColorsJSON).colors; //parse the colors
 
 const checkColorCode = (input) => {
     const trimmedInput = input.replace(/\s/g, "");
-    if (approvedColors.includes(trimmedInput.toLowerCase())) {
+    const hexidecimalCode = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/
+    if (approvedColors.includes(trimmedInput.toLowerCase()) || hexidecimalCode.test(input)) {
         return true;
     } else {
-        return "Please enter a valid SVG color code."
+        return "Please enter a valid SVG color code of hexidecimal code."
     }
 }
 const questions = [

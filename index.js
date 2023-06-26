@@ -1,26 +1,45 @@
-const fs = require("fs");
-const inquirer = require("inquirer");
-const generateLogo = require("./lib/shapes");
+const fs = require("fs"); //links fs library
+const inquirer = require("inquirer"); //links inquirer library
+const generateLogo = require("./lib/shapes"); //link the shapes.js
+const approvedColorsJSON = fs.readFileSync('./lib/SVG_Colors.JSON'); //links to the json file with the approved svg color codes
+const approvedColors = JSON.parse(approvedColorsJSON).colors; //parse the colors object
 
+const checkColorCode = (input) => {
+    const trimmedInput = input.replace(/\s/g, "");
+    if (approvedColors.includes(trimmedInput.toLowerCase())) {
+        return true;
+    } else {
+        return "Please enter a valid SVG color code."
+    }
+}
 const questions = [
     {
         name: "abbr",
-        message: "What is the abbreviation (3 letters) that you would like to use for this logo?" 
+        message: "What is the abbreviation (3 letters) that you would like to use for this logo?",
+        validate: function (input) {
+            if (input.length !== 3) {
+                return "Abbreviation must be exactly 3 characters long.";
+            } else {
+            return true;
+            }
+        }
     },
     {
         name: "textColor",
-        message: "What color would you like your logo to be? (Please use color keyword or hexidecimal code)"
+        message: "What color would you like your logo text to be? (Please use color keyword or hexidecimal code)",
+        validate: checkColorCode
     },
     {
         name: "shape",
-        message: "What shape would you like the text to be?",
+        message: "What shape would you like the logo to be?",
         type: "list",
         choices: ["Circle", "Triangle", "Square"]
     },
     {
         name: "shapeColor",
-        message: "What color would you like the shape to be? (Please use color keyword or hexidecimal code)"
-    },
+        message: "What color would you like the shape to be? (Please use color keyword or hexidecimal code)",
+        validate: checkColorCode
+    }
 ];
 
 // TODO: Create a function to write README file
@@ -40,7 +59,7 @@ function init() {
     .then((answers) => {
         console.log(answers);
         const markdownContent = generateLogo(answers); //stoes the data to enter into README file to a variable
-        writeToFile("logo.svg", markdownContent); //calls the function to actually generate the README file
+        writeToFile("./examples/logo.svg", markdownContent); //calls the function to actually generate the README file
     });
 };
 

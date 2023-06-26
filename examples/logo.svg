@@ -1,0 +1,6 @@
+
+        <svg>
+           <polygon points="150,15 215,100 85,100" fill="lawngreen"/>
+           <text x="50%" y="50%" font-family="Verdana" font-size="35" fill="lightsteelblue" text-anchor="middle" dominant-baseline="middle">wgl</text>
+        </svg>
+    

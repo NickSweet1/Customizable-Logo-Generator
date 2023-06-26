@@ -1,4 +1,6 @@
+const fs = require("fs");
 const inquirer = require("inquirer");
+const generateLogo = require("./lib/shapes");
 
 const questions = [
     {
@@ -6,7 +8,7 @@ const questions = [
         message: "What is the abbreviation (3 letters) that you would like to use for this logo?" 
     },
     {
-        name: "color",
+        name: "textColor",
         message: "What color would you like your logo to be? (Please use color keyword or hexidecimal code)"
     },
     {
@@ -27,7 +29,7 @@ function writeToFile(fileName, data) {
         if (error) {
             console.log("error"); // logs error if error occurs
         } else {
-            console.log("Logo."); //logs proof that file has been created
+            console.log("Logo generated."); //logs proof that file has been created
         }
     })
 }
@@ -37,7 +39,7 @@ function init() {
     inquirer.prompt(questions)
     .then((answers) => {
         console.log(answers);
-        const markdownContent = generateMarkdown(answers); //stoes the data to enter into README file to a variable
+        const markdownContent = generateLogo(answers); //stoes the data to enter into README file to a variable
         writeToFile("logo.svg", markdownContent); //calls the function to actually generate the README file
     });
 };

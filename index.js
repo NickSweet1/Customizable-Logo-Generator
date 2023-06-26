@@ -5,12 +5,12 @@ const approvedColorsJSON = fs.readFileSync('./lib/SVG_Colors.JSON'); //links to 
 const approvedColors = JSON.parse(approvedColorsJSON).colors; //parse the colors object
 
 const checkColorCode = (input) => {
-    const trimmedInput = input.replace(/\s/g, "");
-    const hexidecimalCode = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/
+    const trimmedInput = input.replace(/\s/g, ""); //removes spaces to match the JSON file
+    const hexidecimalCode = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/  //checks if it is a hexidecimal code
     if (approvedColors.includes(trimmedInput.toLowerCase()) || hexidecimalCode.test(input)) {
         return true;
     } else {
-        return "Please enter a valid SVG color code of hexidecimal code."
+        return "Please enter a valid SVG color code or hexidecimal code."
     }
 }
 const questions = [
@@ -39,6 +39,17 @@ const questions = [
     {
         name: "shapeColor",
         message: "What color would you like the shape to be? (Please use color keyword or hexidecimal code)",
+        validate: checkColorCode
+    },
+    {
+        name: "border",
+        message: "Whould you like a border around the logo?",
+        type: "confirm",
+    },
+    {
+        name: "borderColor",
+        message: "What color would you like the border to be? (Please use color keyword or hexidecimal code)",
+        when: (answers) => answers.border,
         validate: checkColorCode
     }
 ];

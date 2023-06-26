@@ -1,0 +1,19 @@
+{
+  "name": "customizable-logo-generator",
+  "version": "1.0.0",
+  "description": "This is a project that will render a logo that fits the criteria the user inputs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickSweet1/Customizable-Logo-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NickSweet1/Customizable-Logo-Generator/issues"
+  },
+  "homepage": "https://github.com/NickSweet1/Customizable-Logo-Generator#readme"
+}

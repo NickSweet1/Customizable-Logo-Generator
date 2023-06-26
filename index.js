@@ -70,7 +70,7 @@ function init() {
     inquirer.prompt(questions)
     .then((answers) => {
         console.log(answers);
-        const markdownContent = generateLogo(answers); //stoes the data to enter into README file to a variable
+        const markdownContent = generateLogo(answers); //stoes the data to enter into SVG file to a variable
         writeToFile("./examples/logo.svg", markdownContent); //calls the function to actually generate the README file
     });
 };

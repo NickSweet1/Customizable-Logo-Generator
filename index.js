@@ -18,7 +18,7 @@ const questions = [
         name: "abbr",
         message: "What is the abbreviation (3 letters) that you would like to use for this logo?",
         validate: function (input) {
-            if (input.length !== 3) {
+            if (input.length > 3) {
                 return "Abbreviation must be exactly 3 characters long.";
             } else {
             return true;

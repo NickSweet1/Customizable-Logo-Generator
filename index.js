@@ -54,7 +54,7 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+//Create a function to write SVG file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (error) => {
         if (error) {
@@ -65,7 +65,7 @@ function writeToFile(fileName, data) {
     })
 }
 
-// TODO: Create a function to initialize app
+//Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {

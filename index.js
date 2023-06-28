@@ -71,7 +71,7 @@ function init() {
     .then((answers) => {
         console.log(answers);
         const markdownContent = generateLogo(answers); //stoes the data to enter into SVG file to a variable
-        writeToFile(`./examples/${answers.abbr}.svg`, markdownContent); //calls the function to actually generate the README file
+        writeToFile(`./examples/logo.svg`, markdownContent); //calls the function to actually generate the README file
     });
 };
 

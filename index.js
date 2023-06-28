@@ -60,7 +60,7 @@ function writeToFile(fileName, data) {
         if (error) {
             console.log("error"); // logs error if error occurs
         } else {
-            console.log("Logo generated."); //logs proof that file has been created
+            console.log("Generated logo.svg."); //logs proof that file has been created
         }
     })
 }

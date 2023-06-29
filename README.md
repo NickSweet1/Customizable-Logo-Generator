@@ -20,7 +20,7 @@
 
   ## Usage<a name="usage"></a> 
   To us this application, please verify that all the necesary libraries are installed. Type "node index.html" to be prompted with questions regarding how the logo should be styled. After answering all of the questions, an   SVG file will be created named logo.svg. <br>
-  Click [here](https://drive.google.com/file/d/1WYbIxeD9K_Ux1T5_hxyq5T7JrlnRI3QR/view) to view a walkthough video on how this application works.
+  To view a walkthough video on how this application works, please click [here](https://drive.google.com/file/d/1WYbIxeD9K_Ux1T5_hxyq5T7JrlnRI3QR/view). 
   ## Tests<a name="tests"></a>
   For testing purposes, run "npm test" in the command line. This will ensure that all shapes (circle, triangle, and square) can be used as a logo style.  
 

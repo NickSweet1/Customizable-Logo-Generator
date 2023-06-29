@@ -1,6 +1,6 @@
 const fs = require("fs"); //links fs library
 const inquirer = require("inquirer"); //links inquirer library
-const generateLogo = require("./lib/shapes"); //link the shapes.js
+const {generateLogo, Circle, Square, Triangle, Shape} = require("./lib/shapes"); //link the shapes.js
 const approvedColorsJSON = fs.readFileSync('./lib/SVG_Colors.JSON'); //links to the json file with the approved svg color codes
 const approvedColors = JSON.parse(approvedColorsJSON).colors; //parse the colors object
 
@@ -13,6 +13,7 @@ const checkColorCode = (input) => {
         return "Please enter a valid SVG color code or hexidecimal code."
     }
 }
+
 const questions = [
     {
         name: "abbr",

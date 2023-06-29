@@ -19,7 +19,7 @@
   Node must be installed onto the users computer. Please visit https://nodejs.org/en/download for more information on how to download. Jest and inquirer also must be installed to the package.json file. 
 
   ## Usage<a name="usage"></a> 
-  To us this application, please verify that all the necesary libraries are installed. Type "node index.html" to be prompted with questions regarding how the logo should be styled. After answering all of the questions, an   SVG file will be created with the logo abbreviation being the name of the file.
+  To us this application, please verify that all the necesary libraries are installed. Type "node index.html" to be prompted with questions regarding how the logo should be styled. After answering all of the questions, an   SVG file will be created named logo.svg.
 
   ## Tests<a name="tests"></a>
   For testing purposes, run "npm test" in the command line. This will ensure that all shapes (circle, triangle, and square) can be used as a logo style.  
